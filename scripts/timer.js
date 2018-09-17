@@ -1,8 +1,17 @@
+/*
+** Author : Harish Kumar
+** Description: Timer class to measure performance
+** Copyright: All rights belong to Harish Kumar (C)
+*/
+
+'use strict';
+
 export class Timer
 {
-    constructor()
+    constructor(timerDescription = "No description given")
     {
         this.recentTimeStamp;
+        this.timerDescription = timerDescription;
         this.totalElapsedTime = 0;
         this.numberOfTimesPaused = 0;
         this.paused = false;
@@ -18,10 +27,20 @@ export class Timer
     {
         if (!this.paused)
         {
-            this.totalElapsedTime += this.recentTimeStamp - window.performance.now();
+            this.totalElapsedTime += window.performance.now() - this.recentTimeStamp;
             this.paused = true;
             ++this.numberOfTimesPaused;
         }
+    }
+
+    setDescription(description)
+    {
+        this.timerDescription = description;
+    }
+
+    getDescription()
+    {
+        return this.timerDescription;
     }
 
     getElapsedMilliSeconds()

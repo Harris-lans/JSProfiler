@@ -4,3 +4,26 @@
     color: white;
     text-align: center;
 }
+
+.list-container
+{
+    margin: auto;
+}
+
+.result-data-container
+{
+    margin: 10px;
+    border: solid 2px rgb(29, 127, 255);
+    padding: 5px;
+}
+
+.list-container
+{
+    margin: auto;
+}
+
+.refresh-button
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
